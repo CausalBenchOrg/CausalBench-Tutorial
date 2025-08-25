@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>CausalBench Tutorial KDD'25</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" disabled>
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">CausalBench Tutorial KDD'25</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="." class="nav-link active" aria-current="page">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="prep/" class="nav-link">How to Prepare</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://docs.causalbench.org" class="nav-link">Documentation</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="prep/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="true">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#causalbench-causal-learning-research-streamlined" class="nav-link">CausalBench: Causal Learning Research Streamlined</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#schedule" class="nav-link">Schedule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#tutorial" class="nav-link">Tutorial</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#tutorial-material" class="nav-link">Tutorial Material</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#presenters" class="nav-link">Presenters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#contributors" class="nav-link">Contributors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#references" class="nav-link">References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#contact" class="nav-link">Contact</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#acknowledgments" class="nav-link">Acknowledgments</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<!-- # Presenters’ names and bibliography, tutorial outline and what will the participants learn from the tutorial. -->
+
+<h1 id="causalbench-causal-learning-research-streamlined">CausalBench: Causal Learning Research Streamlined</h1>
+<p><a href="https:..kdd2025.kdd.org/"><img alt="KDD Logo" src="resources/images/kddlogo.jpg" /></a></p>
+<h2 id="schedule">Schedule</h2>
+<p>The tutorial <strong>took</strong> place at <a href="https://kdd2025.kdd.org/">KDD'25</a>, on Monday, August 4, 8:00 AM – 11:00 AM, in Toronto Convention Centre, Room 707. Thank you for attending! Please enjoy the video recording of the tutorial below.</p>
+<h3 id="tutorial-video">Tutorial Video</h3>
+<p><a href="https://youtu.be/oGA2kf4Trg4"><img alt="Watch the video" src="https://img.youtube.com/vi/oGA2kf4Trg4/0.jpg" /></a></p>
+<h2 id="tutorial">Tutorial</h2>
+<p>In this 3-hour long tutorial, we will explore the field of Causality, the state of the art, difficulties in benchmarking studies, and learn how to utilize CausalBench to facilitate comparative and transparent benchmarking.
+Read the tutorial paper <a href="https://docs.causalbench.org/files/papers/CausalBench_Tutorial.pdf">here</a>.</p>
+<h3 id="tutorial-abstract">Tutorial Abstract</h3>
+<p>Recent advances in causal machine learning introduced a plethora of new causal discovery and causal inference models to tackle decision support problems. Yet, these models exhibit different performance when they train on different data, and even different hardware/software platforms, making it challenging for users to select the appropriate setup pertinent to their specific problem instance. The situation is complicated by the fact that, until recently, the field lacked a unified, publicly available, and configurable platform that supports all major causal inference tasks, including causal discovery, causal effect estimation, and causal inference. CausalBench is a comprehensive benchmarking tool for causal machine learning that facilitates accurate and reproducible benchmarking of causal models across metrics and deployment contexts and helps users to select the most appropriate set up (such as hyper-parameter configuration) for the specific problem setting. This tutorial is intended to familiarize attendees from diverse backgrounds, who are interested in causal learning models and with the capabilities of CausalBench. The tutorial begins with an introduction to "causality" and causal machine learning, and then provides hands-on experience with CausalBench to equip attendees with the knowledge necessary to utilize CausalBench for their causal learning problems.</p>
+<h2 id="tutorial-material">Tutorial Material</h2>
+<p>We provide several tutorial materials below for your convenience and reference. These materials may be updated in the future to provide the best CausalBench experience.</p>
+<h3 id="slides">Slides</h3>
+<p>You may access the <a href="/resources/KDD25_Tutorial_Deck.pdf">slides</a> here.</p>
+<h3 id="quickstart-file-google-colab">Quickstart file (Google Colab)</h3>
+<p>For your convenience, we have provided two Python Notebook files that can be run on Google Colab.</p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1BxN6ol7hVi66tifZ0WRlPgmbsr8w0lY6">CausalBench Tutorial File</a>, *this file will be utilized through the hands-on tutorial.</li>
+</ul>
+<h2 id="presenters">Presenters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="" src="resources/images/kapkic.jpg" /></td>
+<td style="text-align: center;"><img alt="" src="resources/images/mandal.jpg" /></td>
+<td style="text-align: center;"><img alt="" src="resources/images/gorantla.jpg" /></td>
+<td style="text-align: center;"><img alt="" src="resources/images/liu.jpg" /></td>
+</tr>
+<tr>
+<td style="text-align: center;"><a href="https://kapkic.github.io">Ahmet Kapkiç</a></td>
+<td style="text-align: center;">Pratanu Mandal</td>
+<td style="text-align: center;">Abhinav Gorantla</td>
+<td style="text-align: center;">Huan Liu</td>
+</tr>
+<tr>
+<td style="text-align: center;">Arizona State University</td>
+<td style="text-align: center;">Arizona State University</td>
+<td style="text-align: center;">Arizona State University</td>
+<td style="text-align: center;">Arizona State University</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contributors">Contributors</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="" src="resources/images/wan.jpg" /></td>
+<td style="text-align: center;"><img alt="" src="resources/images/coban.jpg" /></td>
+<td style="text-align: center;"><img alt="" src="resources/images/sheth.jpg" /></td>
+<td style="text-align: center;"><img alt="" src="resources/images/candan.jpg" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Shu Wan</td>
+<td style="text-align: center;">Ertuğrul Çoban</td>
+<td style="text-align: center;">Paras Sheth</td>
+<td style="text-align: center;">K. Selçuk Candan</td>
+</tr>
+<tr>
+<td style="text-align: center;">Arizona State University</td>
+<td style="text-align: center;">Arizona State University</td>
+<td style="text-align: center;">Amazon</td>
+<td style="text-align: center;">Arizona State University</td>
+</tr>
+</tbody>
+</table>
+<h3 id="program-outline">Program Outline</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Time</strong></td>
+<td style="text-align: center;"><strong>Content</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">08:00-08:05</td>
+<td style="text-align: center;">Introduction to the Tutorial</td>
+</tr>
+<tr>
+<td style="text-align: center;">08:05-08:25</td>
+<td style="text-align: center;">Introduction to CausalBench</td>
+</tr>
+<tr>
+<td style="text-align: center;">08:25-08:55</td>
+<td style="text-align: center;">Introduction to Causality and Causal Learning</td>
+</tr>
+<tr>
+<td style="text-align: center;">08:55-09:30</td>
+<td style="text-align: center;">Delve into the CasualBench framework to create and execute benchmarks</td>
+</tr>
+<tr>
+<td style="text-align: center;">09:30-10:00</td>
+<td style="text-align: center;">Coffee break</td>
+</tr>
+<tr>
+<td style="text-align: center;">10:00-10:10</td>
+<td style="text-align: center;">Shorter introduction to CausalBench</td>
+</tr>
+<tr>
+<td style="text-align: center;">10:10-10:35</td>
+<td style="text-align: center;">Explore published benchmarks and reproduce experiments</td>
+</tr>
+<tr>
+<td style="text-align: center;">10:35-10:50</td>
+<td style="text-align: center;">Gain further insights using Causal Analysis and Recommendations</td>
+</tr>
+<tr>
+<td style="text-align: center;">10:50-11:00</td>
+<td style="text-align: center;">CausalBench: What's Next?</td>
+</tr>
+</tbody>
+</table>
+<h3 id="covered-topics">Covered Topics</h3>
+<ol>
+<li><strong>CausalBench</strong><ul>
+<li>Introduction to CausalBench</li>
+<li>Installing CausalBench and setting up a benchmark</li>
+<li>Benchmark contexts: details and configuration files</li>
+<li>Creating and executing a benchmark context</li>
+<li>Analyzing and interpreting the results</li>
+<li>Challenges ahead and contributing to CausalBench</li>
+</ul>
+</li>
+<li><strong>Causality</strong><ul>
+<li>Introduction to causality [6, 7]</li>
+<li>Models for representing causal knowledge [3, 5]</li>
+<li>State-of-the art in causal discovery and causal effect estimation [1, 2, 8] </li>
+</ul>
+</li>
+</ol>
+<h3 id="documentation">Documentation</h3>
+<p>You can access CausalBench documentation at <a href="https://docs.causalbench.org">docs.causalbench.org</a>, which is the acting knowledge base for CausalBench.</p>
+<h2 id="references">References</h2>
+<ol>
+<li>Azad, F. T., Candan, K. S., Kapkiç, A., Li, M.-L., Liu, H., Mandal, P., Sheth, P., Arslan, B., Chowell-Puente, G., Sabo, J., et al. (vision paper) a vision for spatio-causal situation awareness, forecasting, and planning. ACM Transactions on Spatial Algorithms and Systems 10, 2 (2024), 1–42. </li>
+<li>Guo, R., Cheng, L., Li, J., Hahn, P. R., and Liu, H. A survey of learning causality with data: Problems and methods. ACM Computing Surveys (CSUR) 53, 4 (2020), 1–37. </li>
+<li>Hoyle, R. H. Handbook of structural equation modeling. Guilford press, 2012. </li>
+<li>Kapkiç, A., Mandal, P., Wan, S., Sheth, P., Gorantla, A., Choi, Y., Liu, H., and Candan, K. S. Introducing causalbench: A flexible benchmark framework for causal analysis and machine learning. In Proceedings of the 33rd ACM International Conference on Information and Knowledge Management (2024), pp. 5220–5224. </li>
+<li>Pearl, J. Graphs, causality, and structural equation models. Sociological Methods &amp; Research 27, 2 (1998), 226–284. </li>
+<li>Pearl, J. Causality. Cambridge university press, 2009. </li>
+<li>Pearl, J., Glymour, M., and Jewell, N. P. Causal inference in statistics: A primer. John Wiley &amp; Sons, 2016. </li>
+<li>Wan, S., Shah, R., Deng, Q., Sabo, J., Liu, H., and Candan, K. S. Spatio-temporal causal learning for streamflow forecasting. In 2024 IEEE International Conference on Big Data (BigData) (2024), IEEE, pp. 6161–6170.</li>
+</ol>
+<h2 id="contact">Contact</h2>
+<p>For questions regarding tutorial, please contact us at support@causalbench.org or akapkic@asu.edu.</p>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>We thank all the contributors and the community for their continuous support and feedback in making CausalBench a reliable and valuable resource for causal learning research.
+This research is funded by NSF Grant 2311716, "CausalBench: A Cyberinfrastructure for Causal-Learning Benchmarking for Efficacy, Reproducibility, and Scientific Collaboration", and NSF Grants #2230748, "PIRE: Building Decarbonization via AI-empowered District Heat Pump Systems", #2412115, "PIPP Phase II: Analysis and Prediction of Pandemic Expansion (APPEX)" and USACE #GR40695, "Designing nature to enhance resilience of built infrastructure in western US landscapes".</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2025-08-25 20:14:29.548561+00:00
+-->
