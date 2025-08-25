@@ -25,8 +25,6 @@ You may access the [slides](/resources/KDD25_Tutorial_Deck.pdf) here.
 For your convenience, we have provided two Python Notebook files that can be run on Google Colab.
 
 - [CausalBench Tutorial File](https://colab.research.google.com/drive/1BxN6ol7hVi66tifZ0WRlPgmbsr8w0lY6), *this file will be utilized through the hands-on tutorial.
-  - [CausalBench Quickstart File](https://colab.research.google.com/drive/1M068y8xOeAzCihDf1YVsFNZUY5JMHCQ8)
-
 
 ## Presenters
 |  |  | | |
