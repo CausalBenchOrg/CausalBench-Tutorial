@@ -6,7 +6,7 @@
 The tutorial **took** place at [KDD'25](https://kdd2025.kdd.org/), on Monday, August 4, 8:00 AM – 11:00 AM, in Toronto Convention Centre, Room 707. Thank you for attending! Please enjoy the video recording of the tutorial below.
 
 ### Tutorial Video
-[![Watch the video](https://img.youtube.com/vi/oGA2kf4Trg4/default.jpg)](https://youtu.be/oGA2kf4Trg4)
+[![Watch the video](https://img.youtube.com/vi/oGA2kf4Trg4/0.jpg)](https://youtu.be/oGA2kf4Trg4)
 
 ## Tutorial
 In this 3-hour long tutorial, we will explore the field of Causality, the state of the art, difficulties in benchmarking studies, and learn how to utilize CausalBench to facilitate comparative and transparent benchmarking.
